@@ -26,8 +26,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=['requests', 'psutil'],
     classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+        'Programming Language :: Python :: 3',
+        'License :: OSI Approved :: MIT License',
+        'Operating System :: OS Independent',
     ]
 )
