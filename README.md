@@ -1,6 +1,6 @@
 # Watero Go
 
-[![](https://img.shields.io/pypi/v/watero_go.svg)](https://pypi.org/project/watero_go/)
+[![](https://img.shields.io/pypi/v/watero-go.svg)](https://pypi.org/project/watero-go/)
 [![](https://img.shields.io/github/license/Qinnnnnn/Watero_Go.svg)](https://github.com/Qinnnnnn/Watero_Center/blob/master/LICENSE)
 ![](https://img.shields.io/badge/python-3.7-blue.svg)
 * Watero Go是Watero Center部署于服务器的Agent服务
