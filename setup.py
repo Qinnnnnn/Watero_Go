@@ -15,7 +15,7 @@ with open('README.md') as fp:
     long_description = fp.read()
 
 setuptools.setup(
-    name='watero_go',
+    name='watero-go',
     version='0.1',
     author='Clever Moon',
     author_email='qzr19970105@live.com',
