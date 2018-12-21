@@ -1,7 +1,7 @@
 # Watero Go
 
 [![](https://img.shields.io/pypi/v/watero-go.svg)](https://pypi.org/project/watero-go/)
-[![](https://img.shields.io/github/license/Qinnnnnn/Watero_Go.svg)](https://github.com/Qinnnnnn/Watero_Center/blob/master/LICENSE)
+[![](https://img.shields.io/github/license/Qinnnnnn/Watero_Go.svg)](https://github.com/Qinnnnnn/Watero_Go/blob/master/LICENSE)
 ![](https://img.shields.io/badge/python-3.7-blue.svg)
 * Watero Go是Watero Center部署于服务器的Agent服务
 * Watero Go用于采集节点数据并上报Watero Center，同时接收Watero Center推送的控制信息
