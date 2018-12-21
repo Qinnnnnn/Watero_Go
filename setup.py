@@ -9,15 +9,25 @@ LastModifiedDate : 2018-12-06 10:00:00
 Note : 打包上传PyPi
 """
 
-from setuptools import setup
+import setuptools
 
-setup(
+with open('README.md') as fp:
+    long_description = fp.read()
+
+setuptools.setup(
     name='watero_go',
-    version='0.0.1',
+    version='0.1',
     author='Clever Moon',
     author_email='qzr19970105@live.com',
+    description='采集节点数据并上报Watero Center，同时接收Watero Center推送的控制信息',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/Qinnnnnn/Watero_Go',
-    description='节点数据采集并上传服务',
-    packages=['watero_go', 'utils'],
-    install_requires=['requests', 'psutil']
+    packages=setuptools.find_packages(),
+    install_requires=['requests', 'psutil'],
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ]
 )
