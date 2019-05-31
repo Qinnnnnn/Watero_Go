@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-File : mac_addr.py
+File : hardware.py
 Author : Zerui Qin
 CreateDate : 2018-12-06 10:00:00
 LastModifiedDate : 2018-12-06 10:00:00
@@ -18,8 +18,8 @@ def get_mac_address(is_format=True):
     :param is_format: Boolean - 是否以冒号分隔MAC地址
     :return: str - MAC地址
     """
-    node = uuid.getnode()
-    mac_addr = uuid.UUID(int=node).hex[-12:]
+    node = uuid.getnode()  # 获取硬件编码
+    mac_addr = uuid.UUID(int=node).hex[-12:].upper()  # 获取大写MAC地址，不包含分割符
     if is_format:
         mac_addr_list = list()
         flag = 0

@@ -10,12 +10,12 @@ Note : 自定义异常类
 """
 
 
-class AgentServiceException(Exception):
+class ServiceException(Exception):
     """
     AgentService异常
     """
 
-    def __init__(self, s_service):
+    def __init__(self, p_service):
         Exception.__init__(self)
-        err = 'Can not found {0}'.format(s_service)
-        self.message = err
+        msg = 'Service {0} found error'.format(p_service)
+        self.msg = msg

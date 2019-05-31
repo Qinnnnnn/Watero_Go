@@ -10,6 +10,7 @@ Note : 输出日志
 """
 import logging
 import logging.handlers
+import os
 
 
 class Log:
@@ -54,7 +55,7 @@ class Log:
         self.logger.addHandler(th)  # 把文件输出对象加到logger里
 
 
-path = '/Users/clevermoon'
+path = os.getcwd()
 log_debug = Log(path + '/logs/debug.log', 'DEBUG')
 log_info = Log(path + '/logs/info.log', 'INFO')
 log_warning = Log(path + '/logs/warning.log', 'WARNING')
