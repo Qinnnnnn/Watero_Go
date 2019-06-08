@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 """
-File : test.py
+File : run.py
 Author : Zerui Qin
 CreateDate : 2019-05-22 23:48:29 
 Note : 
 """
 
 import threading
-
-from watero_go.agent_client import AgentClient
+from ..agent_client import AgentClient
 
 
 def bundle_send(p_data_service):
