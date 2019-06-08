@@ -8,12 +8,16 @@ Note :
 """
 
 import threading
+
 from .agent_client import AgentClient
 
 
 def bundle_send(p_data_service):
-    h_status = p_data_service.heartbeat()
-    r_status = p_data_service.resource()
+    try:
+        h_status = p_data_service.heartbeat()
+        r_status = p_data_service.resource()
+    except Exception as e:
+        pass
     timer = threading.Timer(60, bundle_send, args=[p_data_service, ])
     timer.start()
 
