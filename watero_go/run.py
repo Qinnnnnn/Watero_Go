@@ -8,7 +8,7 @@ Note :
 """
 
 import threading
-from ..agent_client import AgentClient
+from .agent_client import AgentClient
 
 
 def bundle_send(p_data_service):
