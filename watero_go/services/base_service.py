@@ -8,9 +8,10 @@ CreateDate : 2018-12-20 10:00:00
 LastModifiedDate : 2018-12-20 10:00:00
 Note : Agent基础服务类, 获取Agent数据服务相关方法
 """
-import time
+import datetime
 
 import psutil
+import pytz
 import requests
 
 from watero_go.utils import hardware
@@ -30,6 +31,7 @@ class BaseService:
         """
         self.url_prefix = p_url_prefix
         self.mac_addr = hardware.get_mac_address()
+        self.tz = pytz.timezone('Asia/Shanghai')  # 设置获取的时区
         self.access_token = ''
 
     def auth(self):
@@ -58,7 +60,7 @@ class BaseService:
         payload = dict()
         payload['mac_addr'] = self.mac_addr
         payload['access_token'] = self.access_token
-        payload['create_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        payload['create_time'] = datetime.datetime.now(self.tz).strftime("%Y-%m-%d %H:%M:%S")
 
         response = requests.post(url=self.url_prefix + Route.HEARTBEAT.value, data=payload)
         res_json = response.json()
@@ -85,7 +87,7 @@ class BaseService:
         payload['sensors_battery_percent'] = psutil.sensors_battery()  # 电量百分比
         payload['boot_time'] = psutil.datetime.datetime.fromtimestamp(psutil.boot_time()).strftime(
             "%Y-%m-%d %H:%M:%S")  # 启动时间
-        payload['create_time'] = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+        payload['create_time'] = datetime.datetime.now(self.tz).strftime("%Y-%m-%d %H:%M:%S")
 
         response = requests.post(url=self.url_prefix + Route.RESOURCE.value, data=payload)
         res_json = response.json()
