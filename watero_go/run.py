@@ -9,7 +9,7 @@ Note :
 
 import threading
 
-from .agent_client import AgentClient
+from watero_go.agent_client import AgentClient
 
 
 def bundle_send(p_data_service):
